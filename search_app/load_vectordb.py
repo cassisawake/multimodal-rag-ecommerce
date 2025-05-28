@@ -1,6 +1,6 @@
 import os
 import json
-import pinecone_client as pinecone
+import pinecone
 from tqdm import tqdm
 import numpy as np
 from sklearn.metrics import top_k_accuracy_score
