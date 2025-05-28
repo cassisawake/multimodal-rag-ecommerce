@@ -24,7 +24,7 @@ import os
 # ----- Configuration -----
 PINECONE_API_KEY = os.getenv("PINECONE_API_KEY")
 INDEX_NAME = "multimodal"
-LLM_MODEL = "google/flan-t5-base"
+LLM_MODEL = "microsoft/phi-2"
 device = "cuda" if torch.cuda.is_available() else "cpu"
 print("Loaded Pinecone key:", bool(PINECONE_API_KEY))
 
@@ -52,6 +52,7 @@ phi_pipe = pipeline(
     temperature=0.7,
     device=0 if torch.cuda.is_available() else -1
 )
+
 
 # ----- Embedding Functions -----
 def embed_text(text):
