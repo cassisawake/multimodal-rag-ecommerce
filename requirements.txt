@@ -1,0 +1,11 @@
+streamlit
+torch
+transformers
+Pillow
+tqdm
+pandas
+numpy
+requests
+kagglehub
+pinecone-client
+scikit-learn
