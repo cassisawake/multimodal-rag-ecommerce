@@ -26,6 +26,8 @@ PINECONE_API_KEY = os.getenv("PINECONE_API_KEY")
 INDEX_NAME = "multimodal"
 LLM_MODEL = "microsoft/phi-2"
 device = "cuda" if torch.cuda.is_available() else "cpu"
+print("Loaded Pinecone key:", bool(PINECONE_API_KEY))
+
 
 # ----- Pinecone Initialization -----
 from pinecone import Pinecone
