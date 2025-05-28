@@ -28,8 +28,11 @@ LLM_MODEL = "microsoft/phi-2"
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
 # ----- Pinecone Initialization -----
-pinecone.init(api_key=PINECONE_API_KEY, environment="us-east-1")
-index = pinecone.Index(INDEX_NAME)
+from pinecone import Pinecone
+
+pc = Pinecone(api_key=PINECONE_API_KEY)
+index = pc.Index(INDEX_NAME)
+
 
 # ----- Load CLIP -----
 clip_model = CLIPModel.from_pretrained("openai/clip-vit-base-patch32").to(device)
